@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@hubbox/single-widget-manager':
     specifier: ^2.7.0
-    version: 2.7.0
+    version: link:../single-widget-manager
 
 devDependencies:
   vite:
@@ -222,10 +222,6 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
-
-  /@hubbox/single-widget-manager@2.7.0:
-    resolution: {integrity: sha512-lMivxjPrbBMTmGz5GnAFKXl2Dm2oZefFk4PpYkFGzaVkNMwjsgN1MfVbu4X1MX7XwQwQg6F6Ls35srtUh5H3Qg==}
-    dev: false
 
   /@rollup/rollup-android-arm-eabi@4.14.3:
     resolution: {integrity: sha512-X9alQ3XM6I9IlSlmC8ddAvMSyG1WuHk5oUnXGw+yUBs3BFoTizmG1La/Gr8fVJvDWAq+zlYTZ9DBgrlKRVY06g==}

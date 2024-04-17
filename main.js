@@ -23,4 +23,6 @@ const singleWidgetManager = new SingleWidgetManager({
   // }
 });
 
-singleWidgetManager.events.subscribe(singleWidgetManager.topics.subscribe.COLLECT_POINT_CONFIRMED, (messageAndTopic) => console.log("I subscribed to topic:" + messageAndTopic.topic, messageAndTopic.message));
+
+// Subscribe to the TOGGLE_COOL_NEW_FEATURE event topic and log events received under this topic:
+singleWidgetManager.events.subscribe(singleWidgetManager.topics.subscribe.TOGGLE_COOL_NEW_FEATURE, (messageAndTopic) => console.log("I subscribed to topic:" + messageAndTopic.topic, messageAndTopic.message));
