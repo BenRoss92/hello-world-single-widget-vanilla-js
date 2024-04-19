@@ -2,6 +2,7 @@ import './style.css'
 
 document.querySelector('#app').innerHTML = `
 <div id="hubbox-widget"></div>
+<button id="ho-ho-ho" type="button">Send Ho Ho Ho!</button>
 `
 
 import SingleWidgetManager from '@hubbox/single-widget-manager'
@@ -26,3 +27,9 @@ const singleWidgetManager = new SingleWidgetManager({
 
 // Subscribe to the TOGGLE_COOL_NEW_FEATURE event topic and log events received under this topic:
 singleWidgetManager.events.subscribe(singleWidgetManager.topics.subscribe.TOGGLE_COOL_NEW_FEATURE, (messageAndTopic) => console.log("I subscribed to topic:" + messageAndTopic.topic, messageAndTopic.message));
+
+const hoHoHoButton = document.querySelector("#ho-ho-ho");
+
+hoHoHoButton.addEventListener('click', () => {
+  singleWidgetManager.events.emit(singleWidgetManager.topics.emit.SEND_HO_HO_HO, "HO HO HO!");
+});
