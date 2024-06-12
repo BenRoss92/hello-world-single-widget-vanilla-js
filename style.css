@@ -96,6 +96,6 @@ button:focus-visible {
 }
 
 iframe {
-  height: 2000px;
-  width: 2000px;
+  height: 100vh;
+  width: 100vh;
 }
