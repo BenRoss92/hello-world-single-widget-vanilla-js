@@ -25,6 +25,12 @@ const singleWidgetManager = new SingleWidgetManager({
 });
 
 
+singleWidgetManager.events.subscribe(singleWidgetManager.topics.subscribe.COLLECT_POINT_SELECTED, (messageAndTopic) => console.log("I subscribed to topic:" + messageAndTopic.topic, messageAndTopic.message));
+
+singleWidgetManager.events.subscribe(singleWidgetManager.topics.subscribe.COLLECT_POINT_UNSELECTED, (messageAndTopic) => console.log("I subscribed to topic:" + messageAndTopic.topic, messageAndTopic.message));
+
+singleWidgetManager.events.subscribe(singleWidgetManager.topics.subscribe.COLLECT_POINT_CONFIRMED, (messageAndTopic) => console.log("I subscribed to topic:" + messageAndTopic.topic, messageAndTopic.message));
+
 // Subscribe to the TOGGLE_COOL_NEW_FEATURE event topic and log events received under this topic:
 singleWidgetManager.events.subscribe(singleWidgetManager.topics.subscribe.TOGGLE_COOL_NEW_FEATURE, (messageAndTopic) => console.log("I subscribed to topic:" + messageAndTopic.topic, messageAndTopic.message));
 
@@ -33,3 +39,17 @@ const hoHoHoButton = document.querySelector("#ho-ho-ho");
 hoHoHoButton.addEventListener('click', () => {
   singleWidgetManager.events.emit(singleWidgetManager.topics.emit.SEND_HO_HO_HO, "HO HO HO!");
 });
+
+// Don't do this way round - Jon wants you to instead set some config from the React's index.html file
+// ASK - Couldn't get this to work:
+// singleWidgetManager.events.emit(singleWidgetManager.topics.SET_CONFIGURATION, {
+//   general: {
+//     defaultLatLng :[51.5129974, -0.1383966]
+
+//     // Ben & Jerry's Wardour Street: [-0.1383966, 51.5129974]
+
+//     // defaultLatLng":[40.73061,-73.935242]
+
+//     // default value that's coming from somewhere for London??: [-2.2415178, 53.4834747]
+//   }
+// });
